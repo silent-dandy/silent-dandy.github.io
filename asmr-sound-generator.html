@@ -1697,9 +1697,21 @@ function drawShape() {
    共通エフェクトは こもり → 近さ → 左右の位置 → リミッター を簡易的にかける（響きは省略） */
 let actx = null;                // 再生・試奏用の AudioContext
 function getCtx() {
-  if (!actx) actx = new AudioContext({ latencyHint: 'interactive' });
-  if (actx.state === 'suspended') actx.resume();
+  if (!actx) {
+    // iPhone / iPad：そのままだと消音スイッチ（マナーモード）でWeb Audioの音が消えるので、「再生」扱いにする（iOS 17以降）
+    try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) {}
+    actx = new (window.AudioContext || window.webkitAudioContext)({ latencyHint: 'interactive' });
+  }
+  if (actx.state !== 'running') actx.resume().catch(() => {});      // iOS は 'interrupted' になることもある
   return actx;
+}
+// iPhone / iPad では、画面に触れた瞬間でないと音を出す許可が下りない。最初のタッチで必ず音の出口を開けておく
+if (typeof document !== 'undefined') {
+  const unlock = () => {
+    const ac = getCtx(), s = ac.createBufferSource();
+    s.buffer = ac.createBuffer(1, 1, ac.sampleRate); s.connect(ac.destination); s.start();   // 無音を1サンプル鳴らして確実に開ける
+  };
+  for (const ev of ['pointerdown', 'touchend', 'keydown']) document.addEventListener(ev, unlock, { capture: true, passive: true });
 }
 const live = { s: null, down: false, running: false, v: 0, x: 0.5, y: 0.5, px: 0.5, py: 0.5, dist: 0, lastT: 0, padW: 1 };
 const LIVE_REF = 2.2;           // 「エリアの幅×2.2／秒」で動かしたときを速さ1とする
@@ -2119,6 +2131,7 @@ function play() {
   s.buffer = b; s.loop = player.loop; s.connect(ac.destination);
   s.onended = () => { if (player.src === s) { player.src = null; $('playhead').style.opacity = 0; } };
   s.start();
+  if (ac.state !== 'running') setStatus('音の出口が開いていません（' + ac.state + '）。画面をもう一度タップしてから再生してください。', true);
   player.src = s; player.t0 = ac.currentTime; player.dur = b.duration;
   requestAnimationFrame(tickPlayhead);
 }
