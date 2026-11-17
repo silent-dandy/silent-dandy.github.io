@@ -35,6 +35,80 @@ small{color:var(--muted)}
 <main>
   <h1><span>なでなで・ASMR音</span>ジェネレーター</h1>
   <p>撫で音・オイル・耳ふさぎ・耳かきなどの音を、ノイズと簡単な信号からブラウザの中で合成して、WAVに書き出すツールです。</p>
+  <style>
+    .tos { max-width: 720px; margin: 2em auto; padding: 1.2em 1.4em; border: 1px solid rgba(128,128,128,.35); border-radius: 10px; line-height: 1.75; font-size: 0.95em; }
+    .tos summary { cursor: pointer; font-weight: bold; font-size: 1.1em; }
+    .tos h3 { margin: 1.4em 0 .4em; font-size: 1em; border-left: 4px solid currentColor; padding-left: .5em; }
+    .tos ul { margin: .3em 0; padding-left: 1.4em; }
+    .tos li { margin: .2em 0; }
+    .tos .tos-agree { margin-top: .8em; padding: .6em .8em; background: rgba(128,128,128,.12); border-radius: 6px; }
+    .tos .tos-ok li::marker { content: "○ "; }
+    .tos .tos-ng li::marker { content: "× "; }
+    .tos .tos-meta { margin-top: 1.4em; font-size: .85em; opacity: .75; }
+  </style>
+
+  <section class="tos" id="terms">
+    <details open>
+      <summary>利用規約</summary>
+
+      <p class="tos-agree">
+        このツールを使うと、この規約に同意したものとみなします。<br>
+        難しいことは書いていません。「自由に使ってOK、ただし他の人の迷惑になることはNG」が基本です。
+      </p>
+
+      <h3>書き出した音（WAVファイル）の権利</h3>
+      <ul>
+        <li>このツールで書き出した音の権利は、<strong>書き出したあなた</strong>のものとして扱ってかまいません。</li>
+        <li>ツールの作者は、書き出された音について権利を主張しません。</li>
+        <li>クレジット表記は不要です（書いてもらえるとうれしいです）。<br>
+          例：「効果音：撫で音ジェネレーター（https://silent-dandy.github.io/）」</li>
+      </ul>
+
+      <h3>してもいいこと</h3>
+      <ul class="tos-ok">
+        <li>個人・商用を問わず、自由に使う</li>
+        <li>動画・配信・ASMR作品・ゲーム・VRChatのワールドやアバターなどに組み込む</li>
+        <li>組み込んだ作品を有償で販売する（BOOTH、DLsite など）</li>
+        <li>書き出した音を加工・編集・ほかの音と混ぜる</li>
+      </ul>
+
+      <h3>して欲しくないこと</h3>
+      <ul class="tos-ng">
+        <li><strong>YouTube の Content ID など、音声の照合・権利管理サービスに登録すること</strong><br>
+          同じ設定なら誰でも同じ音を作れるため、登録されるとほかの利用者の作品に誤って権利の申し立てが届いてしまいます。</li>
+        <li>書き出した音について、自分だけが使える権利（独占権）があると主張して、ほかの利用者に使用をやめさせたり、対価を求めたりすること</li>
+        <li>このツール自体（プログラム・設定ファイル）を、作者の許可なく自分の作品として再配布・販売すること<br>
+          ※ツールへのリンクを貼って紹介するのは大歓迎です。</li>
+        <li>法律に違反する用途や、他人を傷つけたり迷惑をかけたりする用途に使うこと</li>
+        <li>書き出した音を加工せず、そのまま効果音素材集として配布・販売すること（作品に組み込んでの販売はOKです）</li>
+      </ul>
+
+      <h3>知っておいてほしいこと</h3>
+      <ul>
+        <li>同じ設定からは、ほかの人もまったく同じ音を作れます。あなたが作った音とそっくりな音を、ほかの人が使ったり販売したりすることもあります。</li>
+        <li>音はすべてお使いの端末の中で作られ、外部には送信されません。</li>
+        <li>大きな音量で長時間聴くと耳を傷めることがあります。音量にはご注意ください。</li>
+      </ul>
+
+      <h3>免責</h3>
+      <ul>
+        <li>このツールは無保証で提供しています。動作や、書き出した音の品質・用途への適合は保証できません。</li>
+        <li>ツールや書き出した音を使ったことで起きた損害やトラブルについて、作者は責任を負いません。</li>
+        <li>ツールの内容は、予告なく変更・公開停止することがあります。</li>
+      </ul>
+
+      <h3>規約の変更</h3>
+      <ul>
+        <li>この規約は予告なく変更することがあります。</li>
+        <li>変更前に書き出した音は、書き出した時点の規約で引き続き使えます。</li>
+      </ul>
+
+      <p class="tos-meta">
+        制定：2026年11月17日<br>
+        お問い合わせ：<a href="https://x.com/silent_dandy_vr" target="_blank">@silent_dandy_vr</a>
+      </p>
+    </details>
+  </section>
   <a class="open" href="asmr-sound-generator.html">ジェネレーターを開く</a>
 
   <section class="card">
