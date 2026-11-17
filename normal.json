@@ -67,10 +67,10 @@
       "fadeOut": 30,
       "loop": false,
       "xfade": 80,
-      "prefix": "skin_stroke_soft_low",
+      "prefix": "normal",
       "batchN": 8,
       "zip": true,
-      "wnName": "skin_stroke_soft_low",
+      "wnName": "normal",
       "wnLen": 2,
       "wnBack": "pitch",
       "wnSemi": 2
