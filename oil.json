@@ -1,0 +1,71 @@
+{
+  "app": "asmr-sound-generator",
+  "version": 2,
+  "state": {
+    "type": "oil",
+    "p": {
+      "oil": {
+        "len": 8,
+        "speed": 26,
+        "wet": 50,
+        "visc": 50,
+        "press": 50,
+        "fc": 250,
+        "width": 0,
+        "speedMod": 75,
+        "q": 0.3,
+        "lowCut": 20,
+        "lpHz": 1850,
+        "lpSteep": 4,
+        "lpQ": 1.4,
+        "shelf": 0,
+        "grainVol": 0,
+        "uneven": 0,
+        "fricOn": true,
+        "fricVol": 75,
+        "squOn": false,
+        "squVol": 60,
+        "bubOn": false,
+        "bubVol": 45
+      }
+    },
+    "fx": {
+      "muffMode": "off",
+      "muffFreq": 900,
+      "muffQ": 0.7,
+      "muffTime": 0.5,
+      "dist": 0.35,
+      "posOn": false,
+      "azFrom": 0,
+      "azTo": 0,
+      "room": false,
+      "roomMix": 20,
+      "roomSize": 0.25,
+      "gain": 0
+    },
+    "seed": 12345,
+    "out": {
+      "sr": 48000,
+      "bits": 16,
+      "channels": 1,
+      "norm": true,
+      "normDb": -3,
+      "drive": 0,
+      "trim": true,
+      "trimDb": -60,
+      "fadeIn": 5,
+      "fadeOut": 30,
+      "loop": false,
+      "xfade": 80,
+      "prefix": "skin_stroke_oil2",
+      "batchN": 8,
+      "zip": true,
+      "wnName": "skin_stroke_oil2",
+      "wnLen": 2,
+      "wnBack": "pitch",
+      "wnSemi": 2
+    },
+    "target": "single",
+    "pattern": []
+  }
+}
