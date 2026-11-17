@@ -57,10 +57,10 @@
       "fadeOut": 30,
       "loop": false,
       "xfade": 80,
-      "prefix": "skin_stroke_oil2",
+      "prefix": "oil",
       "batchN": 8,
       "zip": true,
-      "wnName": "skin_stroke_oil2",
+      "wnName": "oil",
       "wnLen": 2,
       "wnBack": "pitch",
       "wnSemi": 2
