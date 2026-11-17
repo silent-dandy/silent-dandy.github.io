@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>なでなで・ASMR音ジェネレーター</title>
+<meta name="description" content="撫で音・オイル・耳ふさぎ・耳かきなどのASMR音をブラウザで合成して、WAVに書き出すツールです。">
+<style>
+:root{--bg:#1a1719;--panel:#242022;--line:#3d3539;--text:#f1e9e5;--muted:#a99ea1;--fric:#f2a98a;--grain:#8dd3bf}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:32px 20px;background:var(--bg);color:var(--text);
+  font:15px/1.7 "Yu Gothic UI","Hiragino Sans","Meiryo",system-ui,sans-serif}
+main{width:100%;max-width:640px}
+h1{margin:0 0 6px;font-size:26px;letter-spacing:.06em}
+h1 span{color:var(--fric)}
+p{margin:0 0 14px;color:var(--muted)}
+.open{display:inline-block;margin:10px 0 26px;padding:12px 28px;border-radius:999px;background:var(--fric);color:#2a1a14;font-weight:700;text-decoration:none}
+.open:hover{filter:brightness(1.07)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:14px}
+h2{margin:0 0 8px;font-size:15px;letter-spacing:.04em}
+ul{margin:0;padding-left:1.2em}
+li{margin:2px 0}
+a{color:var(--grain)}
+:focus-visible{outline:2px solid var(--grain);outline-offset:3px}
+small{color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <h1><span>なでなで・ASMR音</span>ジェネレーター</h1>
+  <p>撫で音・オイル・耳ふさぎ・耳かきなどの音を、ノイズと簡単な信号からブラウザの中で合成して、WAVに書き出すツールです。</p>
+  <a class="open" href="asmr-sound-generator.html">ジェネレーターを開く</a>
+
+  <section class="card">
+    <h2>できること</h2>
+    <ul>
+      <li>8種類の音（撫で音、オイル・ぬるぬる、耳ふさぎ、耳かき、梵天、タッピング、吐息、パリパリ）</li>
+      <li>こもり、耳元の近さ、左右の位置（HRTF）、小さな部屋の響き</li>
+      <li>音を時間に沿って並べるパターンと、ループ用の書き出し</li>
+      <li>VRChatワールドギミック「World Nadenade」用の音色素材の書き出し</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>設定ファイルの例</h2>
+    <p style="margin-bottom:8px">保存して、ジェネレーターの「設定を読み込む」から読み込めます。</p>
+    <ul>
+      <li><a href="skin_stroke_soft_low_approx.json" download>肌なで・やわらか低め</a></li>
+      <li><a href="skin_stroke_oil2_v3_approx.json" download>肌なで・オイル（こもった連続音）</a></li>
+    </ul>
+  </section>
+
+  <small>最新の Chrome で動きます。音はすべてお使いの端末の中で作られ、外部には送信されません。</small>
+</main>
+</body>
+</html>
