@@ -9,128 +9,52 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>なでなで・ASMR音ジェネレーター</title>
-<meta name="description" content="撫で音・オイル・耳ふさぎ・耳かきなどのASMR音をブラウザで合成して、WAVに書き出すツールです。">
-<style>
-:root{--bg:#1a1719;--panel:#242022;--line:#3d3539;--text:#f1e9e5;--muted:#a99ea1;--fric:#f2a98a;--grain:#8dd3bf}
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:grid;place-items:center;padding:32px 20px;background:var(--bg);color:var(--text);
-  font:15px/1.7 "Yu Gothic UI","Hiragino Sans","Meiryo",system-ui,sans-serif}
-main{width:100%;max-width:640px}
-h1{margin:0 0 6px;font-size:26px;letter-spacing:.06em}
-h1 span{color:var(--fric)}
-p{margin:0 0 14px;color:var(--muted)}
-.open{display:inline-block;margin:10px 0 26px;padding:12px 28px;border-radius:999px;background:var(--fric);color:#2a1a14;font-weight:700;text-decoration:none}
-.open:hover{filter:brightness(1.07)}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:14px}
-h2{margin:0 0 8px;font-size:15px;letter-spacing:.04em}
-ul{margin:0;padding-left:1.2em}
-li{margin:2px 0}
-a{color:var(--grain)}
-:focus-visible{outline:2px solid var(--grain);outline-offset:3px}
-small{color:var(--muted)}
-</style>
+<title>Silent Comfort</title>
+<meta name="description" content="VRChat ワールド用なで音ギミック「World Nadenade」と、なでなで・ASMR音ジェネレーターの配布・マニュアルページです。">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<main>
-  <h1><span>なでなで・ASMR音</span>ジェネレーター</h1>
-  <p>撫で音・オイル・耳ふさぎ・耳かきなどの音を、ノイズと簡単な信号からブラウザの中で合成して、WAVに書き出すツールです。</p>
-  <style>
-    .tos { max-width: 720px; margin: 2em auto; padding: 1.2em 1.4em; border: 1px solid rgba(128,128,128,.35); border-radius: 10px; line-height: 1.75; font-size: 0.95em; }
-    .tos summary { cursor: pointer; font-weight: bold; font-size: 1.1em; }
-    .tos h3 { margin: 1.4em 0 .4em; font-size: 1em; border-left: 4px solid currentColor; padding-left: .5em; }
-    .tos ul { margin: .3em 0; padding-left: 1.4em; }
-    .tos li { margin: .2em 0; }
-    .tos .tos-agree { margin-top: .8em; padding: .6em .8em; background: rgba(128,128,128,.12); border-radius: 6px; }
-    .tos .tos-ok li::marker { content: "○ "; }
-    .tos .tos-ng li::marker { content: "× "; }
-    .tos .tos-meta { margin-top: 1.4em; font-size: .85em; opacity: .75; }
-  </style>
+<div class="portal">
+  <header>
+    <h1 class="brand">Silent Comfort</h1>
+    <p class="tagline">なでなでの音を、だれの耳にも。</p>
+  </header>
 
-  <section class="tos" id="terms">
-    <details open>
-      <summary>利用規約</summary>
-
-      <p class="tos-agree">
-        このツールを使うと、この規約に同意したものとみなします。<br>
-        難しいことは書いていません。「自由に使ってOK、ただし他の人の迷惑になることはNG」が基本です。
-      </p>
-
-      <h3>書き出した音（WAVファイル）の権利</h3>
+  <main class="products">
+    <article class="product nade">
+      <p class="kind">VRChat ワールドギミック</p>
+      <h2><span>World</span> Nadenade</h2>
+      <p>ワールドに置くだけで、頭をなでると音が鳴るギミックです。アバターの改変は要らず、Android / Quest の人にも聞こえます。</p>
       <ul>
-        <li>このツールで書き出した音の権利は、<strong>書き出したあなた</strong>のものとして扱ってかまいません。</li>
-        <li>ツールの作者は、書き出された音について権利を主張しません。</li>
-        <li>クレジット表記は不要です（書いてもらえるとうれしいです）。<br>
-          例：「効果音：撫で音ジェネレーター（https://silent-dandy.github.io/）」</li>
+        <li>なでる側が選んだ音色で、なでた人・なでられた人の両方に鳴る</li>
+        <li>手の速さで音量が変わり、手のひらと手の甲で音を切り替え</li>
+        <li>壁の操作パネルと、持ち運べるタブレット</li>
       </ul>
+      <div class="actions">
+        <a class="btn nade" href="world-nadenade/">マニュアル</a>
+        <span class="btn ghost" aria-disabled="true">BOOTH <span class="badge">準備中</span></span>
+      </div>
+    </article>
 
-      <h3>してもいいこと</h3>
-      <ul class="tos-ok">
-        <li>個人・商用を問わず、自由に使う</li>
-        <li>動画・配信・ASMR作品・ゲーム・VRChatのワールドやアバターなどに組み込む</li>
-        <li>組み込んだ作品を有償で販売する（BOOTH、DLsite など）</li>
-        <li>書き出した音を加工・編集・ほかの音と混ぜる</li>
-      </ul>
-
-      <h3>して欲しくないこと</h3>
-      <ul class="tos-ng">
-        <li><strong>YouTube の Content ID など、音声の照合・権利管理サービスに登録すること</strong><br>
-          同じ設定なら誰でも同じ音を作れるため、登録されるとほかの利用者の作品に誤って権利の申し立てが届いてしまいます。</li>
-        <li>書き出した音について、自分だけが使える権利（独占権）があると主張して、ほかの利用者に使用をやめさせたり、対価を求めたりすること</li>
-        <li>このツール自体（プログラム・設定ファイル）を、作者の許可なく自分の作品として再配布・販売すること<br>
-          ※ツールへのリンクを貼って紹介するのは大歓迎です。</li>
-        <li>法律に違反する用途や、他人を傷つけたり迷惑をかけたりする用途に使うこと</li>
-        <li>書き出した音を加工せず、そのまま効果音素材集として配布・販売すること（作品に組み込んでの販売はOKです）</li>
-      </ul>
-
-      <h3>知っておいてほしいこと</h3>
+    <article class="product gen">
+      <p class="kind">ブラウザで使うツール</p>
+      <h2><span>なでなで・ASMR音</span>ジェネレーター</h2>
+      <p>撫で音・オイル・耳ふさぎ・耳かきなどの音をブラウザの中で合成して、WAV に書き出します。World Nadenade 用の音色も作れます。</p>
       <ul>
-        <li>同じ設定からは、ほかの人もまったく同じ音を作れます。あなたが作った音とそっくりな音を、ほかの人が使ったり販売したりすることもあります。</li>
-        <li>音はすべてお使いの端末の中で作られ、外部には送信されません。</li>
-        <li>大きな音量で長時間聴くと耳を傷めることがあります。音量にはご注意ください。</li>
+        <li>8種類の音と、こもり・距離・左右の位置・響き</li>
+        <li>ループ用の書き出しと、設定ファイルの保存</li>
+        <li>音はすべて端末の中で作られ、外部に送信されません</li>
       </ul>
+      <div class="actions">
+        <a class="btn fric" href="generator/asmr-sound-generator.html">ジェネレーターを開く</a>
+        <a class="btn" href="generator/">説明・利用規約</a>
+      </div>
+    </article>
+  </main>
 
-      <h3>免責</h3>
-      <ul>
-        <li>このツールは無保証で提供しています。動作や、書き出した音の品質・用途への適合は保証できません。</li>
-        <li>ツールや書き出した音を使ったことで起きた損害やトラブルについて、作者は責任を負いません。</li>
-        <li>ツールの内容は、予告なく変更・公開停止することがあります。</li>
-      </ul>
-
-      <h3>規約の変更</h3>
-      <ul>
-        <li>この規約は予告なく変更することがあります。</li>
-        <li>変更前に書き出した音は、書き出した時点の規約で引き続き使えます。</li>
-      </ul>
-
-      <p class="tos-meta">
-        制定：2026年11月17日<br>
-        お問い合わせ：<a href="https://x.com/silent_dandy_vr" target="_blank">@silent_dandy_vr</a>
-      </p>
-    </details>
-  </section>
-  <a class="open" href="asmr-sound-generator.html">ジェネレーターを開く</a>
-
-  <section class="card">
-    <h2>できること</h2>
-    <ul>
-      <li>8種類の音（撫で音、オイル・ぬるぬる、耳ふさぎ、耳かき、梵天、タッピング、吐息、パリパリ）</li>
-      <li>こもり、耳元の近さ、左右の位置（HRTF）、小さな部屋の響き</li>
-      <li>音を時間に沿って並べるパターンと、ループ用の書き出し</li>
-      <li>VRChatワールドギミック「World Nadenade」用の音色素材の書き出し</li>
-    </ul>
-  </section>
-
-  <section class="card">
-    <h2>設定ファイルの例</h2>
-    <p style="margin-bottom:8px">保存して、ジェネレーターの「設定を読み込む」から読み込めます。</p>
-    <ul>
-      <li><a href="normal.json" download>肌なで・やわらか低め</a></li>
-      <li><a href="oil.json" download>肌なで・オイル（こもった連続音）</a></li>
-    </ul>
-  </section>
-
-  <small>最新の Chrome で動きます。音はすべてお使いの端末の中で作られ、外部には送信されません。</small>
-</main>
+  <footer>
+    お問い合わせ：<a href="https://x.com/silent_dandy_vr" target="_blank" rel="noopener">@silent_dandy_vr</a>
+  </footer>
+</div>
 </body>
 </html>

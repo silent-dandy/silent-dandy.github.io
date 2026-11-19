@@ -1,0 +1,15 @@
+# World Nadenade マニュアルの目次（この順でサイドバーと「前へ／次へ」に並びます）
+- title: はじめに
+  url: /world-nadenade/
+- title: 導入する
+  url: /world-nadenade/setup.html
+- title: 操作パネルとタブレット
+  url: /world-nadenade/panel.html
+- title: 音色（Presets）
+  url: /world-nadenade/presets.html
+- title: 音源を用意する
+  url: /world-nadenade/soundpack.html
+- title: 困ったとき・Q&A
+  url: /world-nadenade/faq.html
+- title: 利用規約
+  url: /world-nadenade/terms.html

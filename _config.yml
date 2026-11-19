@@ -1,0 +1,16 @@
+# GitHub Pages（Jekyll）の設定
+# front matter のある .md だけが変換されます。index.html と generator/ の中は、そのまま配信されます。
+title: Silent Comfort
+lang: ja
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+exclude:
+  - README.md
+defaults:
+  - scope:
+      path: "world-nadenade"
+    values:
+      layout: manual

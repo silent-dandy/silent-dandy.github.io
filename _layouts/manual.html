@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KCMRJ27S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ page.title }} | World Nadenade マニュアル</title>
+{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+{% assign nav = site.data.nadenade_nav %}
+{% assign cur = -1 %}
+{% for item in nav %}{% if item.url == page.url %}{% assign cur = forloop.index0 %}{% endif %}{% endfor %}
+<div class="manual">
+  <aside class="side">
+    <a class="home" href="{{ '/' | relative_url }}">← Silent Comfort</a>
+    <a class="title" href="{{ '/world-nadenade/' | relative_url }}"><span>World</span> Nadenade</a>
+    <p class="sub">ワールド制作者向けマニュアル</p>
+    <nav aria-label="マニュアルの目次">
+      <ol>
+        {% for item in nav %}<li><a href="{{ item.url | relative_url }}"{% if forloop.index0 == cur %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+      </ol>
+    </nav>
+    <div class="ext">
+      <a href="{{ '/generator/' | relative_url }}">なでなで・ASMR音ジェネレーター</a>
+      <a href="https://x.com/silent_dandy_vr" target="_blank" rel="noopener">お問い合わせ（X）</a>
+    </div>
+  </aside>
+
+  <main class="doc">
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+
+    {% if cur >= 0 %}
+    {% assign prev_i = cur | minus: 1 %}
+    {% assign next_i = cur | plus: 1 %}
+    <nav class="pager" aria-label="前後のページ">
+      <span>{% if cur > 0 %}<a href="{{ nav[prev_i].url | relative_url }}">← {{ nav[prev_i].title }}</a>{% endif %}</span>
+      <span>{% if next_i < nav.size %}<a href="{{ nav[next_i].url | relative_url }}">{{ nav[next_i].title }} →</a>{% endif %}</span>
+    </nav>
+    {% endif %}
+    <footer>World Nadenade / Silent Comfort</footer>
+  </main>
+</div>
+</body>
+</html>
