@@ -1,6 +1,6 @@
 # silent-dandy.github.io
 
-Silent Comfort の GitHub Pages（https://silent-dandy.github.io/）。
+Silent Comfort の GitHub Pages https://silent-dandy.github.io/
 
 | パス | 内容 |
 |---|---|
