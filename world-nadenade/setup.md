@@ -79,6 +79,8 @@ WorldNadenade の子 `PlayerPreset` が、各プレイヤーが選んだ音色�
 | Sound Palm Blend | 音の位置。0 = 手首、1 = 手のひらの中心 | 0 |
 | Head Radius / Head Center Offset | 頭の判定の大きさと位置（身長 1.6m 基準）。顎まで届くよう、少し下・前寄りにしてあります | 0.13 / (0, -0.02, -0.03) |
 | Near Distance | この距離以内にいる人の頭だけを判定する | 2.5 |
+| Force Language | 表示の言語を固定する（`ja` / `en`）。エディタで日本語の表示を確かめるとき用。公開時は空欄にする（[表示の言語](panel.html#language)） | 空欄 |
+| Fallback Language | 表示言語に翻訳が無い人に使う言語 | en |
 | Debug Mode | ON のときだけデバッグ表示パネルを出す | オフ |
 
 音色ごとの値（音量の補正、速さと音量の対応など）は、[音色（Presets）](presets.html)にあります。
@@ -86,6 +88,8 @@ WorldNadenade の子 `PlayerPreset` が、各プレイヤーが選んだ音色�
 ## 7. 動作を確かめる
 
 > ClientSim ではアバターの手のコンタクトが無いため、**なで音は鳴りません**。VR の Build & Test か、テスト用のアップロードで確認してください。
+>
+> また、ClientSim では**パネルが英語で表示されます**（ClientSim が表示言語を英語として扱うため）。日本語で確かめたいときは、NadeManager の `Force Language` に `ja` と入れます（[表示の言語](panel.html#language)）。
 
 ### 一人で確かめる（VR が必要）
 
@@ -111,6 +115,7 @@ WorldNadenade の子 `PlayerPreset` が、各プレイヤーが選んだ音色�
 ## 8. 公開する前に
 
 - [ ] NadeManager の `Debug Mode` をオフにする（デバッグ表示パネルは自動で隠れるので、削除しなくて構いません）
+- [ ] NadeManager の `Force Language` を空欄にする（入れたままだと、全員の表示がその言語に固定されます）
 - [ ] **Tools > Silent Comfort > World Nadenade > Check Presets** で警告が出ない
 - [ ] 自分で足した音源が、ワールドで使ってよいものか確かめた（[音源を用意する](soundpack.html)）
 - [ ] Android 向けにもビルドし、Quest 単機で日本語の表示と負荷を確かめた
