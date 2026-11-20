@@ -3,9 +3,6 @@ title: はじめに
 description: VRChat ワールド用なで音ギミック World Nadenade の、ワールド制作者向けマニュアルです。
 ---
 
-> **このマニュアルは公開前の下書きです。** 配布ページ・入手方法・利用規約は、公開時に追記します。
-{: .note-draft}
-
 World Nadenade は、VRChat のワールドに置くだけで「頭をなでると音が鳴る」ようにするギミックです。判定と発音をワールド側で行うので、**訪れる人のアバターを改変する必要がなく、Android / Quest の人にも聞こえます。**
 
 ## できること
@@ -18,12 +15,24 @@ World Nadenade は、VRChat のワールドに置くだけで「頭をなでる�
 - **日本語・英語に対応**：パネルの文字は、見ている人の VRChat の表示言語で自動で切り替わります。
 - **音色を足すのが簡単**：音色は Prefab を1つ置くだけで増やせます。音色ごとに試し聴きができます。
 
+## 入手する
+
+本体と基本音源は無料です。最新版は **v1.0.0** です。
+
+| 入手先 | 内容 |
+|---|---|
+| [BOOTH](https://silent-comfort.booth.pm/items/9171198) | 自動インストーラー（zip）。中の unitypackage をインポートすると、VPM のリポジトリ追加と World Nadenade のインストールが自動で行われます。無料版と支援版があり、中身と利用規約は同じです |
+| VPM リポジトリ | VCC / ALCOM に `https://silent-dandy.github.io/vpm/index.json` を追加して導入します（[リポジトリのページ](https://silent-dandy.github.io/vpm/)） |
+
+どちらで入れても中身は同じで、以後の更新は VCC / ALCOM の **Manage Project** から行えます。手順は[導入する](setup.html)にあります。利用には[利用規約](terms.html)への同意が必要です。
+
 ## 動作環境
 
 | 項目 | 内容 |
 |---|---|
-| VRChat SDK | VRChat SDK - Worlds **3.10.6**（UdonSharp） |
-| 必要なパッケージ | TextMesh Pro（TMP Essentials）、[tmp-fallback-fonts-jp](https://github.com/Narazaka/tmp-fallback-fonts-jp)（パネルの日本語表示） |
+| Unity | 2022.3（VRChat の推奨バージョン） |
+| VRChat SDK | VRChat SDK - Worlds **3.10.6 以降**（UdonSharp） |
+| 必要なパッケージ | TextMesh Pro（TMP Essentials）、[tmp-fallback-fonts-jp](https://github.com/Narazaka/tmp-fallback-fonts-jp)（パネルの日本語表示。VPM で World Nadenade と一緒に入ります） |
 | プラットフォーム | PC / Android（Quest）。PCVR 同士、PCVR と Quest 単機の組み合わせで動作を確認済み |
 | アバター | 改変不要（VRChat 標準の手・指のコンタクトを利用） |
 
@@ -42,9 +51,9 @@ World Nadenade は、VRChat のワールドに置くだけで「頭をなでる�
 
 ```
 WorldNadenade
-├─ Heads          … 頭の判定（定員ぶん）
-├─ Voices         … 発音（同時に鳴る数ぶん。推奨 6）
-├─ Presets        … 音色（上から順にボタンに並ぶ）
+├─ Heads          … 頭の判定（定員ぶん。32 人分入っています）
+├─ Voices         … 発音（同時に鳴る数ぶん。6 個入っています）
+├─ Presets        … 音色（上から順にボタンに並ぶ。基本の音色 4 種入り）
 ├─ Preview        … 音色の試し聴き
 └─ PlayerPreset   … なでる側の設定（音色・手のひら / 手の甲）の同期
 ```
@@ -58,3 +67,6 @@ WorldNadenade
 3. [音色（Presets）](presets.html) — 音色の追加・並べ替え・調整
 4. [音源を用意する](soundpack.html) — 自分の音源を使う、ジェネレーターで作る、追加音源パックを作る
 5. [困ったとき・Q&A](faq.html) — 鳴らないとき、負荷、既知の制限
+6. [利用規約](terms.html) — 使ってよいこと・いけないこと
+
+お問い合わせは X の [@silent_dandy_vr](https://x.com/silent_dandy_vr) までお願いします。

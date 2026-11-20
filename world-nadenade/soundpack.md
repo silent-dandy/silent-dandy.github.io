@@ -39,10 +39,7 @@ World Nadenade の音は、ワールドのデータに含まれて**訪れた全
 
 ## 追加音源パックを作る
 
-> この節は下書きです。対応バージョン・条件の細部は、本体の公開時に確定します。
-{: .note-draft}
-
-World Nadenade 用の音色を作り、**追加音源パックとして配布・販売できます**（事前の連絡は不要です）。パックは本体が入ったプロジェクトで使うもので、パック単体では動きません。商品ページには、本体が必要であることと、本体の配布ページへのリンクを載せてください。
+World Nadenade 用の音色を作り、**追加音源パックとして配布・販売できます**（事前の連絡は不要です）。パックは本体（v1.0.0 以降）が入ったプロジェクトで使うもので、パック単体では動きません。v1.x の間は、NadeSoundPreset の項目名・`NadeSoundPreset_Base.prefab`・Base の初期値を変えないようにし、互換性が変わる変更は事前にお知らせします（[利用規約](terms.html)の別紙B）。商品ページには、本体が必要であることと、本体の配布ページへのリンクを載せてください。
 
 ### 入れてよいもの・入れてはいけないもの
 
@@ -70,14 +67,14 @@ Assets/
 
 ### 作り方
 
-1. `NadeSoundPreset_Base.prefab` を右クリック → **Create > Prefab Variant** で作り、自分の `Presets/` フォルダへ移します。
+1. **Packages > World Nadenade > Presets** の `NadeSoundPreset_Base.prefab` を右クリック → **Create > Prefab Variant** で作り、自分の `Presets/` フォルダ（Assets の下）へ移します。
 2. Variant の Preset Id・Display Name・Palm Clip（・Back Clip）を設定します。鳴り方を固定したい値は、Variant 側で明示的に上書きしておきます（インスペクターで太字になります）。
 3. [Sound Tuner](presets.html) で鳴らしながら調整します。
 4. 本体だけが入った新しいプロジェクトにパックを入れ、Presets の下に置いて、**Check Presets**・試し聴き・なでたときの音を確かめます。できれば Android 向けにもビルドして、音質と負荷を確かめます。
 
 ### 購入者向けの説明書に書いてほしいこと
 
-- 必要なもの：World Nadenade 本体（対応バージョン）と、その配布ページへのリンク
+- 必要なもの：World Nadenade 本体（v1.0.0 以降など、対応バージョン）と、その配布ページへのリンク（[BOOTH](https://silent-comfort.booth.pm/items/9171198)）
 - 導入方法：unitypackage を読み込み、`Presets/` の中の Prefab を **WorldNadenade > Presets** の下にドラッグする
 - 並び順：Presets の上から順に音色ボタンに並び、先頭が入室時の音色になること
 - 購入者に、少なくとも「VRChat のワールドに組み込んで訪問者に聞かせること」「その様子が配信・動画に入ること」を許可していること
