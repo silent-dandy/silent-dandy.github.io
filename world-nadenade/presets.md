@@ -8,10 +8,13 @@ description: 音色の追加・並べ替え・調整と、試し聴き、Sound T
 ```
 WorldNadenade
 └─ Presets
-    ├─ Normal     … 先頭 = 入室したときの音色
-    ├─ Oil
-    └─ …
+    ├─ Normal       … ノーマル（先頭 = 入室したときの音色）
+    ├─ Oil          … オイル
+    ├─ OilLow       … オイル 低
+    └─ Oil-Normal   … オイル / ノーマル（手のひらはオイル、手の甲はノーマル）
 ```
+
+基本の音色 4 種は、[なでなで・ASMR音ジェネレーター](../generator/)で一から合成した音です。Prefab はパッケージの `Presets/Basic` にあります。
 
 - 上から順に、音色ボタンに並びます。**先頭の音色が、入室したときの音色**になります。
 - **無効にした音色は使われません。** 一時的に外したいときは、削除せずに無効にできます。
@@ -30,7 +33,7 @@ WorldNadenade
 
 ### Prefab Variant で作る
 
-配布されている `NadeSoundPreset_Base.prefab` を右クリック → **Create > Prefab Variant** で作り、音源・Display Name・Preset Id だけを上書きします。できた Variant を Presets の下に置きます。
+**Packages > World Nadenade > Presets** の `NadeSoundPreset_Base.prefab` を右クリック → **Create > Prefab Variant** で作り、音源・Display Name・Preset Id だけを上書きします。できた Variant を Presets の下に置きます。
 
 上書きしていない調整値は Base から受け継ぐので、音色どうしの扱いがそろいます。追加音源パックの音色も、この形で作られています。
 
