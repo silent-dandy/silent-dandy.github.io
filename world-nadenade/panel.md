@@ -31,7 +31,7 @@ description: 壁の操作パネルとタブレットの選び方・置き方・�
 
    タブレットの置き台を置くワールドでは、`_TabletNote` の付いたほうを選びます。
 
-2. 置いたパネルの **`Manager` 欄に WorldNadenade をドラッグ**します（空のままだと「未接続」と表示されます）。
+2. 置くと、`Manager` 欄に WorldNadenade が自動で入ります（[パネルの接続](setup.html#connect)）。空のままだと「未接続」と表示されます。
 3. 壁の表面から 2〜3cm 手前に出して置きます。
 
 **大きさを変える**：パネルのルートの Scale を変えます（文字も一緒に小さくなります）。Scale 1 で 84 × 45 cm、0.7 で約 59 × 32 cm です。0.7 より小さくすると、文字が読みにくくなります。
@@ -72,7 +72,7 @@ description: 壁の操作パネルとタブレットの選び方・置き方・�
 
    例：`NadeTablet_Smoke_Gray`（置き台なし）、`NadeTablet_Paper_Sand_CradleWoodLight`
 
-2. タブレットの **`Manager` 欄に WorldNadenade をドラッグ**します。置き台つきの Prefab では、置き台の子の `NadeTablet` にあります。
+2. 置くと、タブレットの `Manager` 欄に WorldNadenade が自動で入ります。置き台つきの Prefab では、置き台の子の `NadeTablet` にあります（自動で入らなかったときは[パネルの接続](setup.html#connect)）。
 3. 置き場所へ動かします。置き台つきは、置き台ごと動かして背板の裏を壁の表面に合わせます（床から 1.0〜1.2m 程度が目安）。
 
 ### 置き台
@@ -121,12 +121,12 @@ description: 壁の操作パネルとタブレットの選び方・置き方・�
 
 パネルではなく、3D のオブジェクトを Interact で押す形にしたいときに使います。
 
-- スイッチに Collider と **NadeSwitch** を付け、`Manager` に WorldNadenade、`Event Name` に `_ToggleSwitch` を指定します。
+- スイッチに Collider と **NadeSwitch** を付け、`Event Name` に `_ToggleSwitch` を指定します。`Manager` には WorldNadenade が自動で入ります（入らないときは、インスペクターの **シーンの WorldNadenade に接続** を押すか、ドラッグします）。
 - `Event Name` を `_NextPreset` にすると、自分の音色を次へ進めるボタンになります。
 
 ## デバッグ表示パネル（NadeDebugPanel・任意）
 
-World Nadenade の `Prefabs/Debug` にある `NadeDebugPanel_Smoke` か `NadeDebugPanel_Paper` を置き、`Manager` 欄に WorldNadenade を指定します。全体の状態と、鳴っている音（速度・音量・手のひら / 手の甲の判定）の表を表示します。NadeManager の `Debug Mode` がオフのときは自動で隠れるので、公開時に削除する必要はありません。
+World Nadenade の `Prefabs/Debug` にある `NadeDebugPanel_Smoke` か `NadeDebugPanel_Paper` を置きます（`Manager` 欄には WorldNadenade が自動で入ります）。全体の状態と、鳴っている音（速度・音量・手のひら / 手の甲の判定）の表を表示します。NadeManager の `Debug Mode` がオフのときは自動で隠れるので、公開時に削除する必要はありません。
 
 ## 表示の言語 {#language}
 
