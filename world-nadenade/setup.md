@@ -33,20 +33,42 @@ description: World Nadenade をワールドに入れて、動作を確かめる�
 
 Prefab は Project ウィンドウの **Packages > World Nadenade** の中にあります。次の3つを置けば使えます。
 
-1. **本体**：`WorldNadenade.prefab` を Hierarchy の好きな場所に **1個だけ**置きます。
+1. **本体**：`WorldNadenade.prefab` を Hierarchy の好きな場所に **1個だけ**置きます。**パネルやタブレットより先に置いてください。**
 2. **壁の操作パネル**：`Prefabs/ControlPanel` から選んで、壁など操作パネルを出したい場所に置き、表示面を部屋の側に向けます（例：`NadeControlPanel_Smoke_TabletNote`）。何枚でも置けます。
-   - 置いたパネルの **NadeControlPanel の `Manager` 欄に WorldNadenade をドラッグ**します。
-   - 設定し忘れたパネルには「未接続」と表示され、Console にも `[World Nadenade] 操作パネルの Manager が未設定です` と出ます。
+   - 置くと、NadeControlPanel の `Manager` 欄に WorldNadenade が**自動で入ります**（[パネルの接続](#connect)）。
 3. **タブレット**（任意）：`Prefabs/Tablet` から選んで置きます（例：`NadeTablet_Smoke_Gray_CradleWoodLight`）。置き台つきは、置き台の原点（背板の裏面）を壁の表面に合わせ、床から 1.0〜1.2 m 程度の高さにします。
-   - 置き台の子の **NadeTablet にある NadeTabletPanel の `Manager` 欄に WorldNadenade をドラッグ**します。
+   - タブレットの `Manager` 欄にも、WorldNadenade が自動で入ります。
 
 色違い・大きさの変え方、タブレットを置かない場合のパネルの選び方は、[操作パネルとタブレット](panel.html)にあります。
 
 > **パッケージの中の Prefab は直接編集しないでください。** パッケージを更新すると元に戻ります。シーンに置いたものを変更してください。
 
+### パネルの接続 {#connect}
+
+操作パネル・タブレット・デバッグ表示パネル・NadeSwitch は、`Manager` 欄に WorldNadenade が入っていると使えます。v1.1.0 から、この欄は自動で埋まります。
+
+- **置くと自動で入る**：シーンに WorldNadenade が1個あれば、パネルを置いた（ドラッグ＆ドロップ・複製・貼り付け）ときに、空の `Manager` 欄に入ります。Console に `[World Nadenade] 1 個のパネルを「WorldNadenade」に接続しました` と出ます。
+- **WorldNadenade を後から置いても入る**：先に置いてあったパネルが、まとめて接続されます。
+- **空になったときも入り直す**：パッケージの更新などで `Manager` 欄が空になったときも、シーンを開いたときなどに自動で接続し直します。シーンを保存すると残ります。
+- **入っている欄は書き換えません。** すべて接続済みなら何もしないので、シーンを開いても「変更あり」にはなりません。
+
+自動で入らなかったときや、まとめて確かめたいときは、次の方法もあります。
+
+| 方法 | 内容 |
+|---|---|
+| パネルのインスペクター | `Manager` 欄が空のときに警告と **シーンの WorldNadenade に接続** ボタンが出ます |
+| WorldNadenade のインスペクター | パネルの接続の状況（接続済み / 未接続）と、**未接続のパネルをこの WorldNadenade に接続** ボタンが出ます |
+| **Tools > Silent Comfort > World Nadenade > Connect Panels** | シーンの未接続のパネルを、すべて接続します |
+| ビルドの前の確認 | Build & Test・アップロードの前に未接続のパネルがあると、「接続して続ける / 中止する / 接続せずに続ける」を選べます |
+| 手で指定する | 今までどおり、`Manager` 欄に WorldNadenade をドラッグしても構いません |
+
+- 設定し忘れたパネルには、ワールドで「未接続」と表示され、Console にも `[World Nadenade] 操作パネルの Manager が未設定です` と出ます。
+- 自動接続をやめたいときは、**Tools > Silent Comfort > World Nadenade > Auto Connect Panels** のチェックを外します（この PC の設定として保存されます）。オンの間は、`Manager` 欄をわざと空にしても入り直します。
+- 非表示（非アクティブ）の WorldNadenade には接続しません。
+
 ### 置くときの注意
 
-- **WorldNadenade は1ワールドに1個だけ**にしてください。2個あると音が二重に鳴ります。
+- **WorldNadenade は1ワールドに1個だけ**にしてください。2個あると音が二重に鳴ります。2個目を置くと「今置いた方を削除 / そのままにする」のダイアログが出ます。2個以上あるあいだは、パネルの自動接続は行わず、インスペクターにエラーが出ます。アップロードの前にも、中止するか尋ねます。
 - **WorldNadenade のルートの Scale は 1 のまま**にしてください。頭の判定の大きさが Scale の影響を受けます。位置と回転は自由です。
 - **WorldNadenade を非アクティブにしないでください。** 非アクティブの間に入室した人が判定の対象から外れます。なで音のオン・オフは、訪れた人がそれぞれパネルやタブレットで行います。
 - 操作パネルは、壁の表面から **2〜3cm 手前**に出してください。壁のコライダーに隠れると、レーザーが届きません。
@@ -133,6 +155,7 @@ WorldNadenade の子 `PlayerPreset` が、各プレイヤーが選んだ音色�
 - [ ] NadeManager の `Debug Mode` をオフにする（デバッグ表示パネルは自動で隠れるので、削除しなくて構いません）
 - [ ] NadeManager の `Force Language` を空欄にする（入れたままだと、全員の表示がその言語に固定されます）
 - [ ] **Tools > Silent Comfort > World Nadenade > Check Presets** で警告が出ない
+- [ ] WorldNadenade のインスペクターで、パネルが「未接続 0」になっている（ビルドの前の確認でダイアログが出ない）
 - [ ] 自分で足した音源が、ワールドで使ってよいものか確かめた（[音源を用意する](soundpack.html)）
 - [ ] Android 向けにもビルドし、Quest 単機で日本語の表示と負荷を確かめた
 
@@ -141,4 +164,6 @@ WorldNadenade の子 `PlayerPreset` が、各プレイヤーが選んだ音色�
 VCC / ALCOM の **Manage Project** で、World Nadenade の新しいバージョンを選びます。BOOTH から入れた場合も同じです。
 
 - シーンに置いた Prefab の変更（Manager の指定、追加した音色など）は、更新しても残ります。
+- 万一 `Manager` 欄が空になっても、シーンを開いたときに自動で接続し直します（v1.1.0 以降。[パネルの接続](#connect)）。
+- 各版の変更点は[はじめに](index.html)の更新履歴にあります。
 - 変更内容は BOOTH の配布ページと、このマニュアルでお知らせします。

@@ -10,11 +10,13 @@ description: 音が鳴らないときの確認、処理負荷、既知の制限�
 | パネルの文字が表示されない・フォントが Missing になる | TMP Essentials のインポートと、tmp-fallback-fonts-jp の Tools メニューの設定を済ませてください（[導入する](setup.html)） |
 | Packages に World Nadenade が見当たらない | VCC / ALCOM の Manage Project で World Nadenade が追加されているか確かめてください。BOOTH の自動インストーラーは、インポート後にインストールが終わるまで少し時間がかかります |
 | エディタの再生（ClientSim）で鳴らない | ClientSim にはアバターの手のコンタクトが無いため、鳴りません。VR の Build & Test かテスト用のアップロードで確かめてください |
-| パネルに「未接続」と出る | そのパネルの `Manager` 欄に WorldNadenade を指定してください |
+| パネルに「未接続」と出る | そのパネルの `Manager` 欄に WorldNadenade が入っているか確かめてください。**Tools > Silent Comfort > World Nadenade > Connect Panels** でまとめて接続できます（[パネルの接続](setup.html#connect)） |
 | 誰がなでても鳴らない | 「なで音を聞く」は、聞きたい本人が自分の端末で ON にする必要があります。入室時に ON にしたい場合は NadeManager の `Start Enabled` をオンにします |
 | 自分で自分をなでても鳴らない | 「自分なで」が OFF になっています（初期値は OFF） |
 | 他人同士のなでなでが聞こえない | 仕様です。自分が関わる接触だけが鳴ります |
-| 音が二重に鳴る | WorldNadenade が2個置かれていないか確かめてください |
+| 音が二重に鳴る | WorldNadenade が2個置かれていないか確かめてください。2個以上あると、WorldNadenade やパネルのインスペクターにエラーが出ます |
+| パネルを置いても `Manager` 欄が空のまま | シーンに WorldNadenade が無いか、2個以上あるか、**Auto Connect Panels** がオフになっています（[パネルの接続](setup.html#connect)） |
+| `Manager` 欄を空にしても入り直す | 自動接続がオンのためです。空のままにしたいときは **Tools > Silent Comfort > World Nadenade > Auto Connect Panels** のチェックを外します |
 | 音色ボタンが出ない・数が合わない | 起動時の Console の `[World Nadenade] Presets N` の数と、警告を確かめてください。無効にした音色と、Palm Clip が無い音色は使われません |
 | 手のひらでなでているのに手の甲の音が鳴る | アバターによって手の向きの判定が逆になることがあります。パネルの「手のひらと手の甲を入れ替える」を ON にしてください（なでる側の設定です） |
 | 最初になでたときだけ音の出だしが遅れる | AudioClip の **Preload Audio Data** をオンにしてください |
